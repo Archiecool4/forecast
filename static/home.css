@@ -1,0 +1,40 @@
+a:link, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+html {
+  margin: 0;
+  height: 100%;
+  font-family: 'Playfair Display', serif;
+  /* 
+    Source: https://www.theguardian.com/global-development-professionals-network/gallery/2017/jan/30/state-amazon-rainforest-deforestation-brazil-in-pictures
+    Photographer: Rodrigo Baleia */
+  background-image: url("healthy-rainforest.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+h1 {
+  color: white;
+  font-size: 100px;
+}
+
+div > a {
+  padding: 10px 30px 10px 30px;
+  border: 2px solid white;
+  border-radius: 10px;
+  vertical-align: middle;
+}
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>Forcasting Amazon Deforestation</title>
+</head>
+
+<body>
+  <h1>Take a Look into the Future</h1>
+  <p>Use the map on the left to find areas of interest. Then click "predict" to 
+  generate a time-series prediction of the next 5 years. </p>
+
+  <section>
+    <section id='input'>
+      <div id='map' style='width: 600px; height: 600px;'></div>
+      <script>
+        mapboxgl.accessToken = '{{ access_token }}';
+        var map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/mapbox/satellite-v9',
+          center: [-54.41, -10],
+          zoom: 9,
+          maxZoom: 11,
+          pitchWithRotate: false,
+          dragRotate: false,
+          touchZoomRotate: false
+        });
+      </script>
+
+      <script>
+        function get_map_image() {
+          var center = map.getCenter();
+          var zoom = map.getZoom();
+          window.location.replace("/map/" + center.lng + "/" + center.lat + "/" + zoom);
+        }
+      </script>
+
+      <button id="predict" onclick="get_map_image();" type="submit">Predict</button>
+    </section>
+
+    <section id='output'>
+      <p>This is a placeholder for when the actual picture appears</p>
+      {{ sample | safe }}
+    </section>
+  </section>
+
+</body>
+</html>
