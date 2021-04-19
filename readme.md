@@ -18,3 +18,5 @@ Here is a sample image to predict on.
 This is the forecast returned by the model.
 
 ![Example of prediction](pred27.jpg)
+
+See our [Devpost project](https://devpost.com/software/forecast-predicting-deforestation-in-the-amazon) for more information.
