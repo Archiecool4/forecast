@@ -1,8 +1,8 @@
 # Forecast
 
 This project was made for HackTech 2021 by Elise Liu and Archie Shahidullah. It uses a pix2pix conditional GAN
-neural network to forecast deforestation in the Amazon rainforest. This model
-is in `pix2pix_train.ipynb`. The following command runs the flask app, where you can select a region from a map and forecast 5 yers into the future of what deforestation may look like.
+neural network to forecast deforestation in the Amazon rainforest. The code to train this model
+is in `pix2pix_train.ipynb`. We used a GPU on Google Colaboratory to train the model. The following command runs the flask app, where you can select a region from a map, using the Mapbox API, and forecast 5 years into the future of what deforestation may look like.
 
 ```
 python main.py
